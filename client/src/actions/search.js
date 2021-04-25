@@ -11,7 +11,7 @@ export const search = (token, q, type, market) => {
      //console.log(data);
       if(data.albums){
           const {items} = data.albums
-         console.log(items);
+        // console.log(items);
          dispatch(getItems(items))
 
       }else if (data.tracks) {

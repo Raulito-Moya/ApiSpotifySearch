@@ -22,7 +22,7 @@ export const fetchToken = (method = 'POST') => {
 
  // const url1 = 'https://api.spotify.com/v1/search'
  
-    return  axios.get(url,{
+    return axios.get(url,{
          method,
          headers: {
           "Accept": "application/json",
