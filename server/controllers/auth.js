@@ -1,4 +1,4 @@
-const { response } = require('express')
+const { response, text } = require('express')
 const axios = require('axios')
 
 const client_id = process.env.SPOTIFY_ID
@@ -38,12 +38,47 @@ const authToken = (req, res = response) => {
 
   }
 
-   
-  
-
 }
 
 
+
+
+ const authTokenUser = (req, res = response) => {
+
+     try {
+        axios({
+          url:"https://accounts.spotify.com/authorize",
+        method: "get",
+        params: {
+          client_id:'1de72a570fb94a9fa7dbab6d8dd16c24',
+          response_type:'code',
+          redirect_uri:'https://spotifysearch.com/callback/'
+        },
+       /* headers:{
+          "Accept": "application/json",
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+       auth: {
+        username: client_id,
+        password: client_secret
+    }*/
+ 
+        }).then( obj => { 
+           console.log(obj.data);
+          res.json({
+            ok: true
+          })
+       })
+     } catch (error) {
+       console.log(error);
+     }
+
+
+ }
+
+
+
 module.exports= {
-    authToken
+    authToken,
+    authTokenUser
 }

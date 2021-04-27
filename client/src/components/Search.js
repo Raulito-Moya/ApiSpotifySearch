@@ -14,7 +14,7 @@ export const Search = ({history}) => {
     const dispatch = useDispatch();
 
      const initState = {
-         artist: '',
+         artist: 'artist',
          type: 'album',
          market: 'US'
      } 
@@ -42,7 +42,7 @@ export const Search = ({history}) => {
     return(
         <div>
            <form class="mb-3" onSubmit={handleSubmit}>
-             <label for="exampleFormControlInput1" class="form-label">escriba su artista</label>
+             <label for="exampleFormControlInput1" class="form-label">Escriba su artista</label>
              <input 
                 type = "text" 
                 class = "form-control" 

@@ -8,8 +8,9 @@ export const search = (token, q, type, market) => {
     const res = await fetchconToken(token,q,type,market);
       
      const {data} = await res
-     //console.log(data);
+     console.log(data);
       if(data.albums){
+
           const {items} = data.albums
         // console.log(items);
          dispatch(getItems(items))

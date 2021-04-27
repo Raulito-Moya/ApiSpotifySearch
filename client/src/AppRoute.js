@@ -14,6 +14,7 @@ import { Body } from './components/Body'
 import { LoginScreen } from './components/LoginScreen';
 import { useDispatch, useSelector } from 'react-redux';
 import { getFetchToken } from './actions/token';
+import { DashboardRoutes } from './components/Routes/DashboardRoutes';
 
 
 
@@ -36,13 +37,13 @@ export const AppRouter = () => {
 
     },[auth.login])
 
-   
+  
     return(
 
     <Router>
       <Switch>
         <PublicRoute exact path='/login' component = {LoginScreen}  isLoged = {auth.login} />
-        <PrivateRoute exact path='/search' component = {Body}  isLoged = {auth.login} />
+        <PrivateRoute  path='/' component = {DashboardRoutes}  isLoged = {auth.login} />
         <Redirect to='/login' />
       </Switch>
     </Router>
