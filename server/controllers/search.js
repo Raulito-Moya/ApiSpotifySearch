@@ -18,8 +18,8 @@ const search = (req, res = response) => {
            },
            headers: {
             "Accept": "application/json",
-            "Content-Type": "application/json",
-            "Authorization": "Bearer BQBs24pEWuW_TjXrWyFW0WI2Efj1a5hjdcl5Q0kw-UDo82gDZpFYzJM8j6mT8E3X9Ya-xUk-sTE43Oec9FE"
+            "Content-Type": "application/json", 
+            "Authorization": "Bearer BQAO_dCiMX_RQhqN8beTypaM8F6G2KeFbUypMk0bRNtSTuws_p4QSz4buAp6m9q3z82qFEemM4eC52HqBHk"
            }
 
        }).then(obj => {
@@ -28,7 +28,6 @@ const search = (req, res = response) => {
                ok:true,
                data: obj.data
                
-
            })
        })
    
@@ -43,6 +42,36 @@ const search = (req, res = response) => {
    }
 
 
+
+
+
+  const searchinUser = (req, res = response) => {  //aqui hago una busqueda con el token del usuario
+  
+      try {
+         
+         axios({
+             url: 'https://api.spotify.com/v1/me',
+             method: 'get',
+             headers: {
+                "Authorization": "Bearer BQCGDmg1ogObJEdH92Ks-IJWvNEhhtRqFuVHvxKTzd5SB444UC51FAiU9DUnYmnm_SUrFWn0v89jAx8uxoCw4EqmJjFh4ZvPitZI8ifzIWhHAtZwOjW7Xu8eKHDQnrUkIhqhmvlxttkkRnaWYsaJIcR-mzAE2rwkCg"
+             }
+         }).then(  obj => {
+             console.log(obj);
+              res.json({
+                  obj:obj.data
+                })
+         })
+
+      } catch (error) {
+          console.log(error);
+      }
+ 
+  } 
+
+
+
+
    module.exports = {
-       search
+       search,
+       searchinUser
    }
