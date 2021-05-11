@@ -7,8 +7,8 @@
 
 # misc
 .env
-/.env
-/.env.development
+client/env.development
+server/.env
 
 .vscode
 
