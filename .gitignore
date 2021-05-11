@@ -6,9 +6,9 @@
 .pnp.js
 
 # misc
-.env
-client/env.development
-server/.env
+
+/client/.env.development
+/server/.env
 
 .vscode
 
