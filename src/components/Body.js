@@ -5,16 +5,16 @@ import { Header } from './Header'
 import { useSelector } from 'react-redux'
 import { Album } from './Album/Album'
 
-export const Body = ({history}) => {
+export const Body = ({ history }) => {
   
-   const {token} = useSelector(state => state.auth)
+   const { token } = useSelector( state => state.auth )
 
    
     return(
         <>
-           <Header/>
-           <Search history={history}/>
-           <Album/>
+           <Header />
+           <Search history={history} />
+           <Album />
         </>
     )
 }

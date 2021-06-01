@@ -23,8 +23,6 @@ export const AppRouter = () => {
   const dispatch = useDispatch();
 
  
-  
-   
  //   console.log(user);
  const {auth} = useSelector(state => state)
    
@@ -32,7 +30,7 @@ export const AppRouter = () => {
    useEffect(() => {
     
      if(auth.login === false || auth.login === null) {
-       localStorage.setItem('login',JSON.stringify(auth))
+       localStorage.setItem('login', JSON.stringify(auth))
      }
 
     },[auth.login])
@@ -42,8 +40,8 @@ export const AppRouter = () => {
 
     <Router>
       <Switch>
-        <PublicRoute exact path='/login' component = {LoginScreen}  isLoged = {auth.login} />
-        <PrivateRoute  path='/' component = {DashboardRoutes}  isLoged = {auth.login} />
+        <PublicRoute exact path='/login' component = { LoginScreen }  isLoged = { auth.login } />
+        <PrivateRoute  path='/' component = { DashboardRoutes }  isLoged = { auth.login } />
         <Redirect to='/login' />
       </Switch>
     </Router>
