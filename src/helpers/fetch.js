@@ -1,10 +1,32 @@
 import axios from 'axios'
 
+
+export const fetchAuthUser = () => {
+   
+  const method = 'GET'
+   
+// return fetch('http://localhost:4000/api/auth/authorizeuser')
+
+  const url = axios.get('http://localhost:4000/api/auth/authorizeuser',{
+    method,
+    headers: {
+     "Accept": "application/json",
+     "Content-Type": "application/json",
+     "Access-Control-Allow-Origin": "*"
+   }
+ 
+  } 
+  )
+
+  return url
+
+}
+
   
 export const fetchToken = (method = 'POST') => {
    
   const client_id = process.env.REACT_APP_SPOTIFYID
-    const client_secret = process.env.REACT_APP_CLIENTSECRET
+  const client_secret = process.env.REACT_APP_CLIENTSECRET
 
    return fetch('http://localhost:4000/api/auth/token')
    

@@ -1,7 +1,16 @@
-import { fetchconToken, fetchToken } from "../helpers/fetch"
+import { fetchAuthUser, fetchconToken, fetchToken } from "../helpers/fetch"
 import { types } from "../types/types"
 
- export const getFetchToken = () => {
+
+export const getAuthorize = async() => {
+   const url = await fetchAuthUser()
+
+   console.log(url.data);
+   window.location.assign(url.data)
+}
+
+
+ export const getFetchToken = () => {  //esto no todavia
     return async(dispatch) => {
 
     const  res = await fetchToken();
