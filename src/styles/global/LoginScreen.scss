@@ -1,0 +1,48 @@
+
+.loginScreen{
+   display: flex;
+   flex-direction: column;
+}
+
+   
+.introForm{
+ border-bottom: 0.5px black solid;
+ font-size: 50px;
+ margin-top:45px;
+ //padding-left: 5%;
+ padding-bottom: 20px;
+
+}
+
+.item{ 
+  margin-top: 50px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-bottom: 190px;
+}
+
+.user{
+font-size: 26px;
+}
+
+.password{
+font-size: 26px;
+}
+
+.buttom{
+ display: block;
+ margin-top: 40px;
+ /*margin-left:50%;
+ margin-right:auto;*/
+ background: #ffffff;
+ color: rgb(0, 0, 0);
+ padding: 10px 15px;
+ border-radius: 5px;
+ border: none;
+ border-bottom: 4px solid #000000;
+ border-right: 3px solid #000000;
+ border-left: 1px solid #000000;
+ border-top: 1px solid #000000;
+ 
+  
+}

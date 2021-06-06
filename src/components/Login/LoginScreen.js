@@ -22,15 +22,17 @@ const dispatch = useDispatch();
 
 
     return(
-        <div>
+        <div className="loginScreen">
           <h1>LoginScreen</h1>
             
           {
             form && (
              <form type='submit'>
                <h2>Login</h2>
-               <input type="click" name="nombre" className="form-control"/>
-               <input type="click" name="correo" className="form-control" />
+               <label class="form-label">Name</label>
+               <input type="click" name="nombre" className="form-control-sm" placeholder="nombre"/>
+               <label class="form-label">Correo</label>
+               <input type="click" name="correo" className="form-control" placeholder="name@example.com"/>
             </form>
             )
           }
