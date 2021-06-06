@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { getFetchToken, getAuthorize } from '../../actions/token';
+import { CreateUserForm } from './CreateUserForm';
+import { LoginFormUser } from './LoginUserForm';
 
 export const LoginScreen = () => {
 
@@ -11,7 +13,7 @@ const dispatch = useDispatch();
     login: true
   }
 
-    const handleLogin = () => {
+    const handleLoginSpotify = () => {
        getAuthorize() 
      // dispatch(getFetchToken())
       localStorage.setItem('login',JSON.stringify(initState))
@@ -22,41 +24,35 @@ const dispatch = useDispatch();
 
 
     return(
+      <div className="row">
+        
         <div className="loginScreen">
-          <h1>LoginScreen</h1>
+         
             
           {
-            form && (
-             <form type='submit'>
-               <h2>Login</h2>
-               <label class="form-label">Name</label>
-               <input type="click" name="nombre" className="form-control-sm" placeholder="nombre"/>
-               <label class="form-label">Correo</label>
-               <input type="click" name="correo" className="form-control" placeholder="name@example.com"/>
-            </form>
-            )
+            form && <LoginFormUser/>
           }
 
          {
-            !form && (
-             <form type='submit'>
-               <h2>Create a account</h2>
-               <input type="click" name="nombre" className="form-control" />
-               <input type="click" name="correo" className="form-control"/>
-            </form>
-            )
-          } 
-         <button type="click" className=" btn primary" onClick={setFormStatus}>{form ? 'Login User':'Create a acount'}</button>
+            !form && <CreateUserForm/>
+         } 
+         
+         <div className="buttom-change">
+           <button type="click" className="btn"  onClick={setFormStatus}>{form ? 'Create a Acount ':'Login User'}</button>
+         </div>
+         
           
-          <div>
+          <div className="item">
             <h4>Login with Spotify</h4>
             <button 
              type="click"
-             onClick={handleLogin}
+             onClick={handleLoginSpotify}
             >
-              Login
+              <img src="/img/spotify-logo.png" alt=""/>
             </button>
           </div>
+
         </div>
+      </div>
     )
 }

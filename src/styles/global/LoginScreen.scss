@@ -15,10 +15,10 @@
 }
 
 .item{ 
-  margin-top: 50px;
+  margin-top: 30px;
   margin-left:auto;
   margin-right:auto;
-  padding-bottom: 190px;
+  padding-bottom: 10px;
 }
 
 .user{
@@ -32,6 +32,8 @@ font-size: 26px;
 .buttom{
  display: block;
  margin-top: 40px;
+ margin-left:auto;
+ margin-right:auto;
  /*margin-left:50%;
  margin-right:auto;*/
  background: #ffffff;
@@ -45,4 +47,24 @@ font-size: 26px;
  border-top: 1px solid #000000;
  
   
+}
+
+.buttom-change{
+
+    display: block;
+    margin-top: 40px;
+    margin-left:auto;
+    margin-right:auto;
+    /*margin-left:50%;
+    margin-right:auto;*/
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 4px solid #2d36af;
+    border-right: 3px solid #2d36af;;
+    border-left: 1px solid #2d36af;;
+    border-top: 1px solid #2d36af;;
+
 }
