@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { setParams } from '../actions/params';
 import { search } from '../actions/search';
-import { logout } from '../actions/token';
+import { logout } from '../actions/logintoken';
 import { useForm } from '../Hooks/useForm'
 
 

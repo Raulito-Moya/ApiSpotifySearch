@@ -4,6 +4,7 @@ const user = JSON.parse( localStorage.getItem('login'))
 
 const initialState = {
     token:'token',
+    nombre:'BD Name',
     login: user.login
 }
 
@@ -15,7 +16,8 @@ export const authReducer = (state = initialState, action) => {
              return {
                ...state,
                login: true,
-               token: action.payload
+               nombre: action.payload.user.nombre,
+               token: action.payload.token
              }
 
          case types.logout:

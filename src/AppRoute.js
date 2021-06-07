@@ -10,12 +10,12 @@ import {
 
 import { PrivateRoute } from './components/Routes/PrivateRoute';
 import { PublicRoute } from './components/Routes/PublicRoute';
-import { Body } from './components/Body'
+
 import { LoginScreen } from './components/Login/LoginScreen';
 
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getFetchToken } from './actions/token';
+import { getFetchToken } from './actions/logintoken';
 import { DashboardRoutes } from './components/Routes/DashboardRoutes';
 
 
@@ -38,8 +38,6 @@ export const AppRouter = () => {
        localStorage.setItem('login', JSON.stringify(auth))
      }
    
-    
-
     },[auth.login])
 
   

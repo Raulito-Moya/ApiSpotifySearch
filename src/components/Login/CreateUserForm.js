@@ -1,8 +1,14 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+
 import { useForm } from '../../Hooks/useForm'
+import { createAcount } from '../../actions/logintoken'
+import { sendAcountData } from '../../helpers/createLoginuser'
+
 
 export const CreateUserForm = () => {
-   
+
+     const dispatch = useDispatch()
    
     const [{nombre,correo, password,confirmPassword}, handleInputChange ] = useForm({
         nombre:'',
@@ -12,9 +18,11 @@ export const CreateUserForm = () => {
     })
 
 
-    const handleLogin = (e) => {
+    const handleCreateUser = async(e) => {
+      console.log(nombre,correo,password);
         e.preventDefault()
-        console.log(correo, password);
+          dispatch(createAcount({nombre,correo,password}))  // todo: voy a dejarlo aqui ya puedo logear usuarios y guardarlos enmi bd hsta manana ;)
+        
     }
 
 
@@ -34,7 +42,7 @@ export const CreateUserForm = () => {
           <input type="click" name="confirmPassword" value={confirmPassword} onChange={handleInputChange} className="form-control " placeholder="Confirm Password"/>
 
 
-          <button type="submit" onClick={handleLogin} className="buttom">LoginUser</button>
+          <button type="submit" onClick={handleCreateUser} className="buttom">LoginUser</button>
        </form>
        
     </div>

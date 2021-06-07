@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { getFetchToken, getAuthorize } from '../../actions/token';
+import { getFetchToken, getAuthorize } from '../../actions/logintoken';
 import { CreateUserForm } from './CreateUserForm';
 import { LoginFormUser } from './LoginUserForm';
 
@@ -27,16 +27,12 @@ const dispatch = useDispatch();
       <div className="row">
         
         <div className="loginScreen">
-         
-            
-          {
-            form && <LoginFormUser/>
-          }
+           
+          { form && <LoginFormUser/> }
 
-         {
-            !form && <CreateUserForm/>
-         } 
+          { !form && <CreateUserForm/> } 
          
+
          <div className="buttom-change">
            <button type="click" className="btn"  onClick={setFormStatus}>{form ? 'Create a Acount ':'Login User'}</button>
          </div>
