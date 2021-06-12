@@ -1,26 +1,41 @@
 import axios from 'axios';
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { getFetchToken, getAuthorize } from '../../actions/logintoken';
 import { CreateUserForm } from './CreateUserForm';
 import { LoginFormUser } from './LoginUserForm';
 
 export const LoginScreen = () => {
 
-const dispatch = useDispatch();
-   
+
+
   const initState = {
     login: true
   }
+  const { ui } = useSelector(state => state)   
+
+
 
     const handleLoginSpotify = () => {
-       getAuthorize() 
+      const data = getAuthorize() 
+      console.log(data);
      // dispatch(getFetchToken())
-      localStorage.setItem('login',JSON.stringify(initState))
+      //localStorage.setItem('login',JSON.stringify(initState))
     }
 
-      const [form, setForm] = useState(true)
-      const setFormStatus = () => { setForm(!form) }
+
+      const [form, setForm] = useState(JSON.parse(localStorage.getItem('formvalue')) )
+      let formValue = 'value' //el value para renderear cada formulario
+
+      const setFormStatus = () => { 
+        setForm(!form) 
+        console.log(form); 
+        }
+
+        JSON.stringify(localStorage.setItem('formvalue',form )) //aqui mando esto fuera del setFormSatus ya que si lo mnado dentro no me coge el valor cambioado por el setState
+       formValue = JSON.parse(localStorage.getItem('formvalue')) 
+       console.log(formValue);
+ 
 
 
     return(
@@ -28,13 +43,13 @@ const dispatch = useDispatch();
         
         <div className="loginScreen">
            
-          { form && <LoginFormUser/> }
+          { formValue && <LoginFormUser/> }
 
-          { !form && <CreateUserForm/> } 
+          { !formValue && <CreateUserForm/> } 
          
-
+          {ui.msg && <h5>Usuario o Contrasena incorrectos</h5>}
          <div className="buttom-change">
-           <button type="click" className="btn"  onClick={setFormStatus}>{form ? 'Create a Acount ':'Login User'}</button>
+           <button type="click" className="btn"  onClick={setFormStatus}>{formValue ? 'Create a Acount ':'Login User'}</button>
          </div>
          
           

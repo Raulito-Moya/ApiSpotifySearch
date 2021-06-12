@@ -34,15 +34,16 @@ export const CardReview = ({match, history}) => {
 
     }
 
- return(
-     <div>
-         <h1> Card Review </h1>
-         <img src={images[1].url} alt="imagen de card"/>
-         <div>
+ return( 
+    
+     <div className="card item" style={{width: "20rem"}}>
+        <h1> Card Review </h1>
+         <img src={images[1].url} alt="imagen de card" className="card-img-top"/>
+         <div className="card-body">
                <h3>type: {type}</h3>
-               <h3>name: {name}</h3> 
-               <h3>total trakcks: {total_tracks}</h3>
-               <h3>release date: {release_date}</h3>
+               <h3 className="card-title">name: {name}</h3> 
+               <h3 className="card-text">total trakcks: {total_tracks}</h3>
+               <h3 className="card-text">release date: {release_date}</h3>
                 <a href={spotify}>Escuchar en Spotify</a>
          </div>
          <div>

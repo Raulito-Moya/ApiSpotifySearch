@@ -2,9 +2,13 @@ export const types = {
 
     params: '[fetch] getParams',
 
-    token: '[fetch] getToken',
+    login: '[fetch] getUser',
     logout: '[logout] logout',
 
-    items: '[items] getitems'
+    items: '[items] getitems',
+
+    uierrorForm: '[ui] errorForm',
+    cleanError: '[ui] cleanErrorForm',
+    errorPassword: '[ui] errorPassword'
 }
 

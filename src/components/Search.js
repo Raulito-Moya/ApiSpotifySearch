@@ -26,7 +26,7 @@ export const Search = ({history}) => {
 
      const handleSubmit = async(e) => {
          e.preventDefault()
-      await dispatch(setParams(artist, type, market))
+         await dispatch(setParams(artist, type, market))
          dispatch(search(token, artist, type, market))
        }
 
@@ -35,12 +35,13 @@ export const Search = ({history}) => {
         
         history.replace('/login')
         dispatch(logout())
-        localStorage.setItem('login', JSON.stringify(auth))
-          
+        localStorage.setItem('login', JSON.stringify(false))
+        localStorage.setItem('uid',JSON.stringify(false))  
      }  
 
     return(
         <div>
+          <h5>{auth.nombre && `Bienvenido ${auth.nombre}`}</h5>
            <form class="mb-3" onSubmit={handleSubmit}>
              <label for="exampleFormControlInput1" class="form-label">Escriba su artista</label>
              <input 

@@ -15,7 +15,7 @@ import { LoginScreen } from './components/Login/LoginScreen';
 
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getFetchToken } from './actions/logintoken';
+import { getFetchToken, getUserExpecific } from './actions/logintoken';
 import { DashboardRoutes } from './components/Routes/DashboardRoutes';
 
 
@@ -27,26 +27,27 @@ export const AppRouter = () => {
  
  //   console.log(user);
    const { auth } = useSelector(state => state)
+   let login = auth.login
    
-    if(auth.token === 'token' || auth.token === null /*que no tinee token */ ){
-        auth.login = false
-       }
-
-   useEffect(() => {
-    
-     if(auth.login === false || auth.login === null) {
-       localStorage.setItem('login', JSON.stringify(auth))
+       
+   useEffect(()=> {
+     if(auth.login !== false  ){
+        login = JSON.parse( localStorage.getItem('login') ) 
+        console.log(login);
      }
-   
-    },[auth.login])
+     
+     if (login === 'undefined') {
+       login = false
+     }
+   })
 
   
     return(
 
     <Router>
       <Switch>
-        <PublicRoute exact path='/login' component = { LoginScreen }  isLoged = { auth.login } />
-        <PrivateRoute  path='/' component = { DashboardRoutes }  isLoged = { auth.login } />
+        <PublicRoute exact path='/login' component = { LoginScreen }  isLoged = { login } />
+        <PrivateRoute  path='/' component = { DashboardRoutes }  isLoged = { login } />
         <Redirect to='/login' />
       </Switch>
     </Router>

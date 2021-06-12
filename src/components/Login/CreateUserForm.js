@@ -1,15 +1,18 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import Swal from 'sweetalert2';
 
 import { useForm } from '../../Hooks/useForm'
 import { createAcount } from '../../actions/logintoken'
-import { sendAcountData } from '../../helpers/createLoginuser'
+import { sendAcountData } from '../../helpers/UserLogin'
+import { passwordError } from '../../actions/ui'
 
 
 export const CreateUserForm = () => {
 
      const dispatch = useDispatch()
-   
+     const { auth } = useSelector( state => state )
+  
     const [{nombre,correo, password,confirmPassword}, handleInputChange ] = useForm({
         nombre:'',
         correo: '',
@@ -21,9 +24,21 @@ export const CreateUserForm = () => {
     const handleCreateUser = async(e) => {
       console.log(nombre,correo,password);
         e.preventDefault()
-          dispatch(createAcount({nombre,correo,password}))  // todo: voy a dejarlo aqui ya puedo logear usuarios y guardarlos enmi bd hsta manana ;)
-        
+           if(password !== confirmPassword ){
+             Swal.fire('Error', 'Las contrasenas deben ser igaules','error')
+           }else if(nombre.length <= 2){
+            Swal.fire('Error', 'El nombre deben ser un nombe valido','error')
+           } else if(correo.length <= 7){
+             Swal.fire('Error', 'El correo debe ser un correo valido','error')
+           } else{
+             dispatch(createAcount({nombre,correo,password})) 
+             localStorage.setItem('login', JSON.stringify(auth.login))
+           }
+             
+         
     }
+
+
 
 
   return(
