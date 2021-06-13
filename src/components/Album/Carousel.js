@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import {
   Carousel,
   CarouselItem,
@@ -23,10 +24,29 @@ import {
         const [animating, setAnimating] = useState(false);
 
         let { items:elements } = useSelector(state => state.items)
-         
-       let result = elements.map(element => element.images[0].url)
-         console.log(result);
-        const items = [
+         // console.log(elements);
+
+       let result = elements.map(element => {
+          return {
+           image:  element.images[0], 
+           url: element.href,
+           id: element.id,
+           name: element.name
+          }
+       })  
+       console.log(result);
+
+         let items = result.map(element => {
+           return {      //eset es el objeto de elementso a renderiar en el carusel
+             src:element.image,
+             id: element.id,
+             url: element.url,
+           altText:element.name,
+           caption: element.name } 
+
+         })
+        // console.log(items);
+       /* const items = [
             {
               src:  'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa20%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa20%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22247.3203125%22%20y%3D%22218.3%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
               altText: 'Slide 1',
@@ -42,7 +62,7 @@ import {
               altText: 'Slide 3',
               caption: 'Slide 3'
             }
-          ];
+          ];*/
 
 
 
@@ -74,13 +94,27 @@ import {
               onExiting={() => setAnimating(true)}
               onExited={() => setAnimating(false)}
               key={item.src}
+              
+              
             >
-              <img src={item.src} alt={item.altText} />
-              <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+              
+              <img src={item.src.url} alt={items.altText} width="100%" height={item.src.height}/>
+             
+             <Link to={ `./body/card/${item.id}` } > 
+                Ver Detalles
+             </Link >
+           
+             
+              <CarouselCaption captionText={item.caption} captionHeader={item.caption}  />
+              
+                 
             </CarouselItem>
+            
           );
         });
+
       
+       
       
         return (
           <Carousel
@@ -90,6 +124,7 @@ import {
           >
             <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
             {slides}
+           
             <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
             <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
           </Carousel>
