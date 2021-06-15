@@ -1,12 +1,13 @@
-.carusel-link{
+.carusel-container{
      display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    padding: 20px;
+   
 }
 
 .link{
 
-    
-    align-content: space-between;
+    align-content: center;
     margin-left: 40%;
     margin-right: auto;
     font-size: 20px;
