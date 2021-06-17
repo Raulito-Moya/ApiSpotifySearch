@@ -26,7 +26,7 @@ export const fetchAuthUser = () => {
 
 
 
-  export const getToken = async(data) => { /* esta funcion la puse en el public para que este a la escucha todo el tiempo */   //me quede aca quiero hacer la autenticacion por spotify desde aquidesde el front y neceistp el codigo del url
+  export const getToken = async(data) => { /*esta funcion va a estar  a la escuha para cuando me redireccione la url coja el codigo y logue al usuario */
 
   const params = new URLSearchParams(window.location.search);
    

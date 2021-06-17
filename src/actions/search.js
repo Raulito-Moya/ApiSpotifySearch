@@ -1,5 +1,8 @@
+
 import { fetchconToken } from "../helpers/fetch"
 import { types } from "../types/types";
+
+
 
 
 export const search = (token, q, type, market) => {
@@ -9,6 +12,7 @@ export const search = (token, q, type, market) => {
       
      const {data} = await res
      console.log(data);
+     
       if(data.albums){
 
           const {items} = data.albums

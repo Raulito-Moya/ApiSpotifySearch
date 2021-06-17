@@ -10,16 +10,8 @@ import {
 } from 'reactstrap';
 
 
- /*let elements = items.map( ( { id,images, name, type,artists, external_urls } ) => {
-  
-     return  {images,name }
-
-}
-
-  ) */
-
       
-      const Example = (props) => {
+      const CarouselComponent = (props) => {
         const [activeIndex, setActiveIndex] = useState(0);
         const [animating, setAnimating] = useState(false);
 
@@ -28,14 +20,14 @@ import {
 
        let result = elements.map(element => {
           return {
-           image: window.innerWidth >= 640 && element.images[0]   ||  window.innerWidth <= 640 && element.images[1],
+           image: window.innerWidth >= 640 && element.images[0]  ||  window.innerWidth <= 640 && element.images[1],
            url: element.href,
            id: element.id,
            name: element.name
           }
        }) 
 
-       console.log(result);
+      // console.log(result);
        //console.log(window.innerWidth);
 
          let items = result.map(element => {
@@ -114,7 +106,7 @@ import {
         );
       }
       
-     export default Example;
+     export default CarouselComponent;
     
 
 

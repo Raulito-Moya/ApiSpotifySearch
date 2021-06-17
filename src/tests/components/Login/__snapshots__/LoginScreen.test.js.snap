@@ -1,0 +1,292 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Screen tests debe de renderizar el CreateUserform 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="loginScreen"
+  >
+    <div
+      className="row item"
+    >
+      <form
+        className="col-sm-12"
+        type="submit"
+      >
+        <h2>
+          Create a Account
+        </h2>
+        <label
+          className="form-label user"
+        >
+          Name
+        </label>
+        <input
+          className="form-control name"
+          name="nombre"
+          onChange={[Function]}
+          placeholder="nombre"
+          type="click"
+          value=""
+        />
+        <label
+          className="form-label user"
+        >
+          Correo
+        </label>
+        <input
+          className="form-control"
+          name="correo"
+          onChange={[Function]}
+          placeholder="name@example.com"
+          type="click"
+          value=""
+        />
+        <label
+          className="form-label user"
+        >
+          Password
+        </label>
+        <input
+          className="form-control "
+          name="password"
+          onChange={[Function]}
+          placeholder="password"
+          type="click"
+          value=""
+        />
+        <input
+          className="form-control "
+          name="confirmPassword"
+          onChange={[Function]}
+          placeholder="Confirm Password"
+          type="click"
+          value=""
+        />
+        <button
+          className="buttom"
+          onClick={[Function]}
+          type="submit"
+        >
+          LoginUser
+        </button>
+      </form>
+    </div>
+    <div
+      className="buttom-change"
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+        type="click"
+      >
+        Login User
+      </button>
+    </div>
+    <div
+      className="item"
+    >
+      <h4>
+        Login with Spotify
+      </h4>
+      <button
+        onClick={[Function]}
+        type="click"
+      >
+        <img
+          alt=""
+          src="/img/spotify-logo.png"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Login Screen tests debe de renderizar el LoginForm 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="loginScreen"
+  >
+    <div
+      className="row item"
+    >
+      <form
+        className="col-sm-10"
+        type="submit"
+      >
+        <h2>
+          Login
+        </h2>
+        <label
+          className="form-label user"
+        >
+          Correo
+        </label>
+        <input
+          className="form-control name"
+          name="correo"
+          onChange={[Function]}
+          placeholder="correo"
+          type="click"
+          value=""
+        />
+        <label
+          className="form-label user"
+        >
+          Password
+        </label>
+        <input
+          className="form-control"
+          name="password"
+          onChange={[Function]}
+          placeholder="Password"
+          type="click"
+          value=""
+        />
+        <button
+          className="buttom"
+          onClick={[Function]}
+          type="submit"
+        >
+          LoginUser
+        </button>
+      </form>
+    </div>
+    <div
+      className="buttom-change"
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+        type="click"
+      >
+        Create a Acount 
+      </button>
+    </div>
+    <div
+      className="item"
+    >
+      <h4>
+        Login with Spotify
+      </h4>
+      <button
+        onClick={[Function]}
+        type="click"
+      >
+        <img
+          alt=""
+          src="/img/spotify-logo.png"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Login Screen tests debe renderiar el form correcto 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="loginScreen"
+  >
+    <div
+      className="row item"
+    >
+      <form
+        className="col-sm-12"
+        type="submit"
+      >
+        <h2>
+          Create a Account
+        </h2>
+        <label
+          className="form-label user"
+        >
+          Name
+        </label>
+        <input
+          className="form-control name"
+          name="nombre"
+          onChange={[Function]}
+          placeholder="nombre"
+          type="click"
+          value=""
+        />
+        <label
+          className="form-label user"
+        >
+          Correo
+        </label>
+        <input
+          className="form-control"
+          name="correo"
+          onChange={[Function]}
+          placeholder="name@example.com"
+          type="click"
+          value=""
+        />
+        <label
+          className="form-label user"
+        >
+          Password
+        </label>
+        <input
+          className="form-control "
+          name="password"
+          onChange={[Function]}
+          placeholder="password"
+          type="click"
+          value=""
+        />
+        <input
+          className="form-control "
+          name="confirmPassword"
+          onChange={[Function]}
+          placeholder="Confirm Password"
+          type="click"
+          value=""
+        />
+        <button
+          className="buttom"
+          onClick={[Function]}
+          type="submit"
+        >
+          LoginUser
+        </button>
+      </form>
+    </div>
+    <div
+      className="buttom-change"
+    >
+      <button
+        className="btn"
+        onClick={[Function]}
+        type="click"
+      >
+        Login User
+      </button>
+    </div>
+    <div
+      className="item"
+    >
+      <h4>
+        Login with Spotify
+      </h4>
+      <button
+        onClick={[Function]}
+        type="click"
+      >
+        <img
+          alt=""
+          src="/img/spotify-logo.png"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;

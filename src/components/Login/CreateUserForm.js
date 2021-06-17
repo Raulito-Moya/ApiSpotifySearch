@@ -22,7 +22,10 @@ export const CreateUserForm = () => {
 
 
     const handleCreateUser = async(e) => {
-      console.log(nombre,correo,password);
+ 
+      try {
+        
+        console.log(nombre,correo,password);
         e.preventDefault()
            if(password !== confirmPassword ){
              Swal.fire('Error', 'Las contrasenas deben ser igaules','error')
@@ -34,6 +37,13 @@ export const CreateUserForm = () => {
              dispatch(createAcount({nombre,correo,password})) 
              localStorage.setItem('login', JSON.stringify(auth.login))
            }
+
+
+      } catch (error) {
+        console.log(error);
+      }
+
+     
              
          
     }

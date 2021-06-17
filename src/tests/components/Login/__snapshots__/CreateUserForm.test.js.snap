@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateUserForm tests debe mostrarse correctemente 1`] = `
+<div
+  className="row item"
+>
+  <form
+    className="col-sm-12"
+    type="submit"
+  >
+    <h2>
+      Create a Account
+    </h2>
+    <label
+      className="form-label user"
+    >
+      Name
+    </label>
+    <input
+      className="form-control name"
+      name="nombre"
+      onChange={[Function]}
+      placeholder="nombre"
+      type="click"
+      value=""
+    />
+    <label
+      className="form-label user"
+    >
+      Correo
+    </label>
+    <input
+      className="form-control"
+      name="correo"
+      onChange={[Function]}
+      placeholder="name@example.com"
+      type="click"
+      value=""
+    />
+    <label
+      className="form-label user"
+    >
+      Password
+    </label>
+    <input
+      className="form-control "
+      name="password"
+      onChange={[Function]}
+      placeholder="password"
+      type="click"
+      value=""
+    />
+    <input
+      className="form-control "
+      name="confirmPassword"
+      onChange={[Function]}
+      placeholder="Confirm Password"
+      type="click"
+      value=""
+    />
+    <button
+      className="buttom"
+      onClick={[Function]}
+      type="submit"
+    >
+      LoginUser
+    </button>
+  </form>
+</div>
+`;

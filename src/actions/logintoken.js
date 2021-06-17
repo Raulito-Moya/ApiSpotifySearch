@@ -17,7 +17,7 @@ export const getAuthorize = async() => {
 
 export const createAcount= (data) => {
   return async(dispatch) => {
-
+      
       const res = await sendAcountData(data) 
       const body = await res.json()
        console.log(body);
@@ -25,6 +25,7 @@ export const createAcount= (data) => {
           dispatch(errorFormLogin(body))
        } else{
           dispatch(getUser(body))
+        
        }
       
   }
