@@ -15,31 +15,70 @@ import { LoginScreen } from './components/Login/LoginScreen';
 
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getFetchToken, getUserExpecific } from './actions/logintoken';
+import { getFetchToken, getUserExpecific, loginUser, loginUserSpotify } from './actions/logintoken';
 import { DashboardRoutes } from './components/Routes/DashboardRoutes';
+import { getCode, getUserSptify } from './helpers/getCode';
+
 
 
 
 export const AppRouter = () => {
 
   const dispatch = useDispatch();
+  
 
- 
- //   console.log(user);
+
    const { auth } = useSelector(state => state)
    let login = auth.login
+  // let dataspotify =  JSON.parse( localStorage.getItem('data') ) 
    
-       
-   useEffect(()=> {
-     if(auth.login !== false  ){
-        login = JSON.parse( localStorage.getItem('login') ) 
+   //login = JSON.parse( localStorage.getItem('login') ) 
+  /* useEffect(()=> {
+     //if(auth.login !== false  ){
+     //   login = JSON.parse( localStorage.getItem('login') ) 
         console.log(login);
-     }
+    // }
      
      if (login === 'undefined') {
        login = false
      }
-   })
+
+   })*/
+
+   let dataspotify = false
+ 
+   /*const params = new URLSearchParams(window.location.search);
+   console.log(window.location.href);
+   //console.log(params.values().next());
+   let codigo =  params.get('code')*/
+   //console.log(codigo); 
+   const params = new URLSearchParams(window.location.search);
+
+   useEffect(async() => {
+   
+    let codigo =  params.get('code')
+    console.log(codigo);
+    
+     const dataspotify = await getUserSptify(codigo)
+     console.log(dataspotify);
+
+    
+     if(dataspotify  ){  
+       console.log( typeof(dataspotify) );
+       console.log(dataspotify.user);
+       console.log('pase la validacion');
+       
+       dispatch(loginUserSpotify(dataspotify))
+      /* if(auth.login !== false  ){
+       // login = JSON.parse( localStorage.getItem('login') ) 
+        console.log(login);
+       }*/
+       console.log('me autentique');
+       console.log(login);
+      }
+
+   },[window.location.href])
+
 
   
     return(

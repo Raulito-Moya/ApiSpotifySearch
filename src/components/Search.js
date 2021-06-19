@@ -37,6 +37,7 @@ export const Search = ({history}) => {
         dispatch(logout())
         localStorage.setItem('login', JSON.stringify(false))
         localStorage.setItem('uid',JSON.stringify(false))  
+        localStorage.setItem('data',false)
      }  
 
     return(

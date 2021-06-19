@@ -27,7 +27,17 @@ export const authReducer = (state = initialState, action) => {
             return {
               login: false,
               token: null
-            }    
+            }
+            
+        
+        /*case types.loginSpotify:
+            return {
+              ...state,
+              login:true,
+              nombre: action.payload.user.nombre,
+              token: action.payload.token,
+              uid: action.payload.user.uid
+            }    */
              
              
      

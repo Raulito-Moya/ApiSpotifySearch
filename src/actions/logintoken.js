@@ -7,8 +7,12 @@ import {getToken} from '../helpers/fetch'
 export const getAuthorize = async() => {
    const url = await fetchAuthUser()
    window.location.href = url.data
-   console.log(url.data);
-   console.log(url.data);
+
+  
+   const urlgetUser = 'http://localhost:4000/api/auth/usertokenauth' 
+     
+   //console.log(url.data);
+
    
  //  const data =  getToken(url.data)
   // return data
@@ -51,8 +55,15 @@ export const loginUser = (data) => {
 
    }
   
-
 }
+
+
+export const loginUserSpotify = (data) => ({
+  
+    type: types.login,
+    payload: data
+
+})
 
 
 export const getUserExpecific = (data) => {

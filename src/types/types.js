@@ -2,8 +2,11 @@ export const types = {
 
     params: '[fetch] getParams',
 
-    login: '[fetch] getUser',
+    login: '[login] getUser',
     logout: '[logout] logout',
+
+    loginSpotify: '[login Spotify] getUser',
+    logoutSpotify: '[logout Spotify] logout',
 
     items: '[items] getitems',
 

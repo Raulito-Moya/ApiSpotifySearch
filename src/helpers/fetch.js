@@ -104,9 +104,6 @@ export const fetchToken = (method = 'POST') => {
 
 
 
-export const fetchTrackPhoto = () => {
-
-}
 
 
 

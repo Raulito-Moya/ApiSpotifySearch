@@ -18,10 +18,13 @@ export const LoginScreen = () => {
 
     const handleLoginSpotify = () => {
       const data = getAuthorize() 
-      console.log(data);
+    
+    //  console.log(data);
      // dispatch(getFetchToken())
       //localStorage.setItem('login',JSON.stringify(initState))
     }
+
+    
 
 
       const [form, setForm] = useState(JSON.parse(localStorage.getItem('formvalue')) )
