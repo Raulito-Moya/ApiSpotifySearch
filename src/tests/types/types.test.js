@@ -10,16 +10,16 @@ describe('Pruebas en types.js', () => {
 
         {
          
-            params: '[fetch] getParams',
-
-            login: '[fetch] getUser',
-            logout: '[logout] logout',
-        
-            items: '[items] getitems',
-        
-            uierrorForm: '[ui] errorForm',
-            cleanError: '[ui] cleanErrorForm',
-            errorPassword: '[ui] errorPassword'
+         cleanError: "[ui] cleanErrorForm",
+         errorPassword: "[ui] errorPassword",
+         items: "[items] getitems",
+         login: "[fetch] getUser",
+         login: "[login] getUser",
+         loginSpotify: "[login Spotify] getUser",
+         logout: "[logout] logout",
+         logoutSpotify: "[logout Spotify] logout",
+         params: "[fetch] getParams",
+         uierrorForm: "[ui] errorForm"
 
         }
 

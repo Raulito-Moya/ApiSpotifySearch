@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link,
   Redirect
 } from "react-router-dom";
 
@@ -15,9 +13,9 @@ import { LoginScreen } from './components/Login/LoginScreen';
 
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getFetchToken, getUserExpecific, loginUser, loginUserSpotify } from './actions/logintoken';
+import {  loginUserSpotify } from './actions/logintoken';
 import { DashboardRoutes } from './components/Routes/DashboardRoutes';
-import { getCode, getUserSptify } from './helpers/getCode';
+import {  getUserSptify } from './helpers/getCode';
 
 
 
@@ -26,7 +24,7 @@ export const AppRouter = () => {
 
   const dispatch = useDispatch();
   
-   console.log(process.env);
+ 
 
    const { auth } = useSelector(state => state)
    let login = auth.login

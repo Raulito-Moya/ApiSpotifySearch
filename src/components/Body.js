@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { Search } from './Search'
 import { Header } from './Header'
-import { Album } from './Album/Album'
 import { getUserExpecific } from '../actions/logintoken'
 import CarouselAlbum from '../components/Album/Carousel'
 
