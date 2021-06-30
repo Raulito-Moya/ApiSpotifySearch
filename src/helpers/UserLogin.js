@@ -5,7 +5,7 @@
 export const sendAcountData = (data) => {
      
     const method = 'POST'
-      const url = 'http://localhost:4000/api/auth/createuser'
+      const url = `${process.env.REACT_APP_API_URL}/auth/createuser`
     
 
   try {
@@ -28,10 +28,11 @@ export const sendAcountData = (data) => {
 
 export const sendLogindata = (data) => {
 
+
   const method = 'POST'
-  const url = 'http://localhost:4000/api/auth/loginuser'
+  const url = `${process.env.REACT_APP_API_URL}/auth/loginuser`
 
-
+  console.log(url);
    try {
      
      return fetch(url,{
@@ -53,7 +54,7 @@ export const sendLogindata = (data) => {
 export const getUserByID = (data) => {
 
   const method = 'POST'
-  const url = 'http://localhost:4000/api/auth/getuserbyid'
+  const url = `${process.env.REACT_APP_API_URL}/auth/getuserbyid`
 
 
    try {

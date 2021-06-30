@@ -5,9 +5,9 @@ export const fetchAuthUser = () => {
    
   const method = 'GET'
    
-// return fetch('http://localhost:4000/api/auth/authorizeuser')
 
-  const url = axios.get('http://localhost:4000/api/auth/authorizeuser',{
+
+  const url = axios.get(`${process.env.REACT_APP_API_URL}/auth/authorizeuser`,{
     method,
     headers: {
      "Accept": "application/json",
@@ -32,7 +32,7 @@ export const fetchAuthUser = () => {
    
   let codigo = params.get('code')
   console.log(codigo);
-  const url = 'http://localhost:4000/api/auth/usertokenauth' 
+  const url = `${process.env.REACT_APP_API_URL}/auth/usertokenauth` 
     
    if(codigo){
       codigo = { codigo: codigo}  
@@ -73,7 +73,7 @@ export const fetchToken = (method = 'POST') => {
   const client_id = process.env.REACT_APP_SPOTIFYID
   const client_secret = process.env.REACT_APP_CLIENTSECRET
 
-   return fetch('http://localhost:4000/api/auth/token')
+   return fetch(`${process.env.REACT_APP_API_URL}/auth/token`)
    
 }
 

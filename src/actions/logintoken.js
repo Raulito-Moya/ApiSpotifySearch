@@ -8,14 +8,7 @@ export const getAuthorize = async() => {
    const url = await fetchAuthUser()
    window.location.href = url.data
 
-  
-   const urlgetUser = 'http://localhost:4000/api/auth/usertokenauth' 
      
-   //console.log(url.data);
-
-   
- //  const data =  getToken(url.data)
-  // return data
 }
 
 
@@ -80,17 +73,6 @@ export const getUserExpecific = (data) => {
 
 
 }
-
-
- /*export const getFetchToken = () => {  //esto no todavia
-    return async(dispatch) => {
-
-    const  res = await fetchToken();
-     const {token} = await res.json();
-     console.log(token);
-      dispatch(getUser(token))
-    }
- }*/
 
 
 

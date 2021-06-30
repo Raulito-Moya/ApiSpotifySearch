@@ -12,7 +12,7 @@
      console.log('se llamo');
        
           
-   const url = 'http://localhost:4000/api/auth/usertokenauth' 
+   const url = `${process.env.REACT_APP_API_URL}/auth/usertokenauth`
 
     fetch(url, {
       method: 'POST',
@@ -54,7 +54,7 @@
       console.log('se llamo');
         
            
-    const url = 'http://localhost:4000/api/auth/usertokenauth' 
+    const url = `${process.env.REACT_APP_API_URL}/auth/usertokenauth`
    
     const data = fetch(url, {
           method: 'POST',
@@ -67,9 +67,7 @@
          .then( resp =>  resp.json() )
          .then( data => { 
               console.log(data);   
-              /*localStorage.setItem('data',JSON.stringify(data))
-              localStorage.setItem('login', JSON.stringify(true))*/
-              //let dataspotify = localStorage.getItem('login', JSON.parse(localStorage.getItem('data')))  
+       
               return data
               
            })
